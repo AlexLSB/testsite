@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Title:
+  = @rubric.title
+%p
+  %b Parent:
+  = @rubric.parent_id
+%p
+  %b Slug:
+  = @rubric.slug
+
+= link_to 'Edit', edit_rubric_path(@rubric)
+\|
+= link_to 'Back', rubrics_path

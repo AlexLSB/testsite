@@ -1,0 +1,34 @@
+<h1>Листинг компаний</h1>
+
+<table>
+  <tr>
+    <th>Название</th>
+    <th>Email</th>
+    <th>Адрес</th>
+    <th>Тел</th>
+    <th>Рубрика</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<p>
+ 
+
+<% @companies.each do |company| %>
+  <tr>
+    <td><%= company.name %></td>
+    <td><%= company.email %></td>
+    <td><%= company.adress %></td>
+    <td><%= company.tel %></td>
+    <td><%= company.rubric %></td>
+    <td><%= link_to 'Показать ', company %></td>
+    <td><%= link_to 'Редактировать', edit_company_path(company) %></td>
+    <td><%= link_to 'Удалить', company, method: :delete, data: { confirm: 'Точнаа?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Новая комания', new_company_path %>

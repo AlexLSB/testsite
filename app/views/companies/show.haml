@@ -1,0 +1,32 @@
+
+%div#breadcrumbs
+  - for comp in @company.ancestors
+    = link_to h(comp.name), comp
+    
+
+%p
+  %b Название: 
+  = @company.name 
+
+
+%p
+  %b Email:
+  =  @company.email 
+
+
+%p
+  %b Адрес: 
+  = @company.adress 
+
+
+%p
+  %b Тел:  
+  = @company.tel 
+
+
+%p
+  %b Рубрика:  
+  = @company.rubric 
+
+= link_to 'Редактировать', edit_company_path(@company)  |
+= link_to 'Назад', companies_path 

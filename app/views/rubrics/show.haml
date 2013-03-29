@@ -1,0 +1,19 @@
+
+%div#breadcrumbs
+  - for comp in @rubric.ancestors
+    = link_to h(comp.title), comp
+    &gt;
+    
+
+%p
+  %b Название: 
+  = @rubric.title
+
+
+%p
+  %b Slug:
+  =  @rubric.slug
+
+
+= link_to 'Редактировать', edit_rubric_path(@rubric)  |
+= link_to 'Назад', rubrics_path 

@@ -1,0 +1,38 @@
+
+%h1 Listing rubrics
+
+%table
+  %tr
+    %th Название
+    %th Parent
+    %th Slug
+    %th
+    %th
+    %th
+
+  - @rubrics.each do |rubric|
+    %table
+      %tr
+        - rubric.path.each do |r|
+          %td= link_to h(r.title), r
+          %td= r.depth 
+          %td >
+
+
+    %tr
+    
+      %td= rubric.title
+      %td
+
+      %td= rubric.parent_id
+      %td= rubric.slug
+      %td= link_to 'Show', rubric
+      %td= link_to 'Edit', edit_rubric_path(rubric)
+      %td= link_to 'Destroy', rubric, :method => :delete, :data => { :confirm => 'Are you sure?' }
+	
+
+
+
+%br
+
+= link_to 'New Rubric', new_rubric_path

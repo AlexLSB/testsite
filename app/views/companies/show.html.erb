@@ -1,0 +1,25 @@
+%p{:id=>"notice"} = notice 
+
+%p
+  %bНазвание: = company.name 
+
+
+%p
+  %bEmail: = company.email 
+
+
+%p
+  %bАдрес: = @company.adress 
+
+
+%p
+  %bТел:  = @company.tel 
+
+
+%p
+  %bРубрика:  = @company.rubric 
+
+
+= link_to 'Редактировать', edit_company_path(@company)  |
+= link_to 'Назад', companies_path 
+
